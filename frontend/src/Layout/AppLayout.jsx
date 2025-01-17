@@ -1,18 +1,14 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import MobileHeader from '../components/MobileHeader'
+import React from "react";
+import { Outlet } from "react-router-dom";
+import Footer from "../components/Footer";
 
 const AppLayout = () => {
   return (
     <div>
-        <Header />
-        <MobileHeader />
-        <Outlet />
-        <Footer />
+      <Outlet />
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default AppLayout
+export default AppLayout;
