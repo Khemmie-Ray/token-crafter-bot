@@ -7,6 +7,7 @@ import {
 import AppLayout from "./layout/AppLayout";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
+import { StarknetProvider } from "./constants/starknet-provider";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -20,7 +21,9 @@ const router = createBrowserRouter(
 const App = () => {
   return (
     <div className="max-w-[1440px] mx-auto font-SourceSansPro bg-white">
+      <StarknetProvider>
       <RouterProvider router={router} />
+      </StarknetProvider>
     </div>
   );
 };
