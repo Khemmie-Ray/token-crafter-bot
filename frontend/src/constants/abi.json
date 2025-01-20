@@ -1,0 +1,165 @@
+[
+    {
+      "type": "impl",
+      "name": "CrafterImpl",
+      "interface_name": "token_crafter::crafter::ICrafter"
+    },
+    {
+      "type": "struct",
+      "name": "core::integer::u256",
+      "members": [
+        {
+          "name": "low",
+          "type": "core::integer::u128"
+        },
+        {
+          "name": "high",
+          "type": "core::integer::u128"
+        }
+      ]
+    },
+    {
+      "type": "struct",
+      "name": "core::byte_array::ByteArray",
+      "members": [
+        {
+          "name": "data",
+          "type": "core::array::Array::<core::bytes_31::bytes31>"
+        },
+        {
+          "name": "pending_word",
+          "type": "core::felt252"
+        },
+        {
+          "name": "pending_word_len",
+          "type": "core::integer::u32"
+        }
+      ]
+    },
+    {
+      "type": "struct",
+      "name": "openzeppelin_token::erc20::interface::IERC20Dispatcher",
+      "members": [
+        {
+          "name": "contract_address",
+          "type": "core::starknet::contract_address::ContractAddress"
+        }
+      ]
+    },
+    {
+      "type": "interface",
+      "name": "token_crafter::crafter::ICrafter",
+      "items": [
+        {
+          "type": "function",
+          "name": "get_user_balance",
+          "inputs": [
+            {
+              "name": "twitter_user",
+              "type": "core::felt252"
+            }
+          ],
+          "outputs": [
+            {
+              "type": "core::integer::u256"
+            }
+          ],
+          "state_mutability": "view"
+        },
+        {
+          "type": "function",
+          "name": "deploy_token",
+          "inputs": [
+            {
+              "name": "name",
+              "type": "core::byte_array::ByteArray"
+            },
+            {
+              "name": "symbol",
+              "type": "core::byte_array::ByteArray"
+            },
+            {
+              "name": "initial_supply",
+              "type": "core::integer::u256"
+            },
+            {
+              "name": "twitter_user",
+              "type": "core::felt252"
+            }
+          ],
+          "outputs": [
+            {
+              "type": "(openzeppelin_token::erc20::interface::IERC20Dispatcher, core::starknet::contract_address::ContractAddress)"
+            }
+          ],
+          "state_mutability": "external"
+        },
+        {
+          "type": "function",
+          "name": "deposit",
+          "inputs": [
+            {
+              "name": "amount",
+              "type": "core::integer::u256"
+            },
+            {
+              "name": "twitter_user",
+              "type": "core::felt252"
+            },
+            {
+              "name": "user_address",
+              "type": "core::starknet::contract_address::ContractAddress"
+            }
+          ],
+          "outputs": [],
+          "state_mutability": "external"
+        },
+        {
+          "type": "function",
+          "name": "get_num_deployed_tokens",
+          "inputs": [],
+          "outputs": [
+            {
+              "type": "core::integer::u256"
+            }
+          ],
+          "state_mutability": "view"
+        },
+        {
+          "type": "function",
+          "name": "get_useable_balance",
+          "inputs": [],
+          "outputs": [
+            {
+              "type": "core::integer::u256"
+            }
+          ],
+          "state_mutability": "view"
+        }
+      ]
+    },
+    {
+      "type": "constructor",
+      "name": "constructor",
+      "inputs": [
+        {
+          "name": "deployer",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "stark_address",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "hash",
+          "type": "core::felt252"
+        }
+      ]
+    },
+    {
+      "type": "event",
+      "name": "token_crafter::crafter::TokenCrafter::Event",
+      "kind": "enum",
+      "variants": []
+    }
+  ]

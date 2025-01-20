@@ -4,7 +4,7 @@ import {
   createRoutesFromElements,
   RouterProvider,
 } from "react-router-dom";
-import AppLayout from "./layout/AppLayout";
+import AppLayout from "./Layout/AppLayout";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import { StarknetProvider } from "./constants/starknet-provider";
